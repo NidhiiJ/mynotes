@@ -6,15 +6,19 @@ import Main from "./Main.js";
 
 function App() {
  //understand why we used localStorage as initial value and parsed it 
-  const [notes, setNotes] = useState(JSON.parse(localStorage.notes) || []);
+  
+  const [notes, setNotes] = useState(JSON.parse(window.localStorage.getItem("notes")) || []);
+  console.log(localStorage.notes)
 
   const [activeNote, setActiveNote] = useState(undefined);
 
   //study useEffect and localStorage
   useEffect(() => {
     
-    localStorage.setItem("notes" , JSON.stringify(notes));
+    window.localStorage.setItem("notes" , JSON.stringify(notes));
   }, [notes]);
+
+  console.log(notes)
   
 
   const onAddNote = () => {
