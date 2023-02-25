@@ -7,7 +7,7 @@ import Main from "./Main.js";
 function App() {
  //understand why we used localStorage as initial value and parsed it 
   
-  const [notes, setNotes] = useState(JSON.parse(window.localStorage.getItem("notes")) || []);
+  const [notes, setNotes] = useState(JSON.parse(window.localStorage.notes) || []);
   console.log(localStorage.notes)
 
   const [activeNote, setActiveNote] = useState(undefined);
